@@ -17,6 +17,7 @@ let renderTodoData = () => {
              `;
   });
 };
+
 // Add Task Function
 
 let addData = () => {
@@ -31,3 +32,12 @@ let addData = () => {
 
 console.log(localStorage.getItem("todo-list"), "local storage data");
 
+// Delete Task Function
+
+let deleteTodo = (index) => {
+    todoList.splice(index,1)
+    localStorage.setItem("todo-list", JSON.stringify(todoList));
+    renderTodoData();
+}
+
+addBtn.addEventListener("click", addData);
