@@ -4,6 +4,7 @@ let todoField = document.getElementById("todo-input");
 let todoListData = document.getElementById("todo-list");
 let addBtn = document.getElementById("add-button");
 let clearAllBtn = document.getElementById("clear-all-button");
+
 let todoList = JSON.parse(localStorage.getItem("todo-list")) || [];
 
 let renderTodoData = () => {
@@ -16,3 +17,17 @@ let renderTodoData = () => {
              `;
   });
 };
+// Add Task Function
+
+let addData = () => {
+  let todoData = todoField.value.trim();
+  console.log(todoData)
+  if (!todoData) return; 
+  todoList.push(todoData);
+  localStorage.setItem("todo-list", JSON.stringify(todoList));
+  todoField.value = "";
+  renderTodoData();
+};
+
+console.log(localStorage.getItem("todo-list"), "local storage data");
+
