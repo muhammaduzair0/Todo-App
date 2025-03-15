@@ -5,13 +5,14 @@ let todoListData = document.getElementById("todo-list");
 let addBtn = document.getElementById("add-button");
 let clearAllBtn = document.getElementById("clear-all-button");
 
-let todoList = JSON.parse(localStorage.getItem("todo-list")) || [];
+// let todoList = JSON.parse(localStorage.getItem("todo-list")) || [];
+let todoList = [];
 
 let renderTodoData = () => {
   todoListData.innerHTML = "";
   todoList.forEach((todo, index) => {
     todoListData.innerHTML += `
-             <h1>${todo}</h1>
+             <input type="text" value=${todo} readonly />
              <Button onClick=deleteTodo(${index})>Delete</Button>
              <Button onClick=editTodo(${index})>Edit</Button>
              `;
@@ -22,15 +23,15 @@ let renderTodoData = () => {
 
 let addData = () => {
   let todoData = todoField.value.trim();
-  console.log(todoData)
-  if (!todoData) return; 
+  console.log(todoData);
+  if (!todoData) return;
   todoList.push(todoData);
-  localStorage.setItem("todo-list", JSON.stringify(todoList));
+  // localStorage.setItem("todo-list", JSON.stringify(todoList));
   todoField.value = "";
   renderTodoData();
 };
 
-console.log(localStorage.getItem("todo-list"), "local storage data");
+// console.log(localStorage.getItem("todo-list"), "local storage data");
 
 // Delete Task Function
 
