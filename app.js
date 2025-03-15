@@ -36,9 +36,11 @@ let addData = () => {
 // Delete Task Function
 
 let deleteTodo = (index) => {
-    todoList.splice(index,1)
-    localStorage.setItem("todo-list", JSON.stringify(todoList));
-    renderTodoData();
-}
+  todoList.splice(index, 1);
+  // localStorage.setItem("todo-list", JSON.stringify(todoList));
+  renderTodoData();
+};
+
+// Edit Task Function
 
 addBtn.addEventListener("click", addData);
