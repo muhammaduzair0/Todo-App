@@ -12,6 +12,9 @@ let renderTodoData = () => {
   todoListData.innerHTML = "";
   todoList.forEach((todo, index) => {
     todoListData.innerHTML += `
+    <div class="flex justify-between items-center bg-gray-100 p-3 mb-2 rounded-md max-md:p-2">
+             <input class="bg-gray-100 outline-none focus:outline-none w-[70%] max-md:w-[60%]" type="text" value=${todo} readonly />
+               <div class="flex pl-2 gap-2">
              `;
   });
 };
