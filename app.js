@@ -12,9 +12,6 @@ let renderTodoData = () => {
   todoListData.innerHTML = "";
   todoList.forEach((todo, index) => {
     todoListData.innerHTML += `
-             <input type="text" value=${todo} readonly />
-             <Button onClick=deleteTodo(${index})>Delete</Button>
-             <Button onClick=editTodo(${index})>Edit</Button>
              `;
   });
 };
