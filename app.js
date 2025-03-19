@@ -12,6 +12,7 @@ let renderTodoData = () => {
   todoListData.innerHTML = "";
   todoList.forEach((todo, index) => {
     todoListData.innerHTML += `
+    <div id="edit" class="flex justify-between items-center bg-gray-100 p-3 mb-2 rounded-md max-md:p-2">
                <div class="flex pl-2 gap-2">
                 <button onClick=editTodo(${index}) class="text-blue-500 hover:text-blue-700 edit-btn max-sm:text-sm">Edit</button>
                 <button onClick=deleteTodo(${index}) class="text-red-500 hover:text-red-700 delete-btn max-sm:text-sm">Delete</button>
