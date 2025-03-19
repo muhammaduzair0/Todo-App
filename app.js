@@ -12,7 +12,6 @@ let renderTodoData = () => {
   todoListData.innerHTML = "";
   todoList.forEach((todo, index) => {
     todoListData.innerHTML += `
-             <input class="bg-gray-100 outline-none focus:outline-none w-[70%] max-md:w-[60%]" type="text" value=${todo} readonly />
                <div class="flex pl-2 gap-2">
                 <button onClick=editTodo(${index}) class="text-blue-500 hover:text-blue-700 edit-btn max-sm:text-sm">Edit</button>
                 <button onClick=deleteTodo(${index}) class="text-red-500 hover:text-red-700 delete-btn max-sm:text-sm">Delete</button>
